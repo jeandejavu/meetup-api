@@ -34,4 +34,8 @@ routes.get(
   handle(controllers.UserPreferenceController.index)
 )
 
+routes.post('/meetups', handle(controllers.MeetupController.store))
+routes.get('/meetups', handle(controllers.MeetupController.index))
+routes.get('/meetups/:id', handle(controllers.MeetupController.show))
+
 module.exports = routes

@@ -4,7 +4,14 @@ module.exports = (sequelize, DataTypes) => {
   })
 
   Preference.associate = models => {
-    Preference.belongsToMany(models.User, { through: models.UsersPreference })
+    Preference.belongsToMany(models.User, {
+      through: models.UsersPreference,
+      foreignKey: 'preferenceId'
+    })
+    Preference.belongsToMany(models.Meetup, {
+      through: models.MeetupsPreference,
+      foreignKey: 'preferenceId'
+    })
   }
 
   return Preference
