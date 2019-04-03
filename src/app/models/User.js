@@ -9,13 +9,13 @@ module.exports = (sequelize, DataTypes) => {
       name: DataTypes.STRING,
       email: DataTypes.STRING,
       password: DataTypes.VIRTUAL,
-      password_hash: DataTypes.STRING
+      passwordHash: DataTypes.STRING
     },
     {
       hooks: {
         beforeSave: async user => {
           if (user.password) {
-            user.password_hash = await bcrypt.hash(user.password, 8)
+            user.passwordHash = await bcrypt.hash(user.password, 8)
           }
         }
       }
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
   )
 
   User.prototype.checkPassword = function (password) {
-    return bcrypt.compare(password, this.password_hash)
+    return bcrypt.compare(password, this.passwordHash)
   }
 
   User.prototype.generateToken = function () {
@@ -35,6 +35,10 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = models => {
     User.belongsToMany(models.Preference, {
       through: models.UsersPreference,
+      foreignKey: 'userId'
+    })
+    User.belongsToMany(models.Meetup, {
+      through: models.MeetupsSubscription,
       foreignKey: 'userId'
     })
   }

@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     description: DataTypes.STRING,
     location: DataTypes.STRING,
-    coverPhoto: DataTypes.STRING
+    coverPhoto: DataTypes.STRING,
+    eventDate: DataTypes.DATE
   })
 
   Meetup.associate = models => {
@@ -12,6 +13,11 @@ module.exports = (sequelize, DataTypes) => {
       through: models.MeetupsPreference,
       foreignKey: 'meetupId'
     })
+    Meetup.belongsToMany(models.User, {
+      through: models.MeetupsSubscription,
+      foreignKey: 'meetupId'
+    })
+    Meetup.hasMany(models.MeetupsSubscription)
   }
 
   return Meetup

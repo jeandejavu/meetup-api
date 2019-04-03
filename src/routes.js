@@ -22,6 +22,10 @@ routes.post(
 
 routes.use(authMiddleware)
 
+routes.put('/users', handle(controllers.UserController.update))
+
+routes.get('/users/:id', handle(controllers.UserController.show))
+
 routes.get('/preferences', handle(controllers.PreferenceController.index))
 
 routes.post(
@@ -37,5 +41,12 @@ routes.get(
 routes.post('/meetups', handle(controllers.MeetupController.store))
 routes.get('/meetups', handle(controllers.MeetupController.index))
 routes.get('/meetups/:id', handle(controllers.MeetupController.show))
+
+routes.get(
+  '/unregistereds-meetups',
+  handle(controllers.UnregisteredController.index)
+)
+
+routes.post('/subscribes', handle(controllers.SubscribeController.store))
 
 module.exports = routes
