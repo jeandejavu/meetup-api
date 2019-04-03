@@ -7,7 +7,6 @@ class UnregisteredController {
     const dateTime = moment()
       .utc('pt-BR')
       .format()
-    console.log(dateTime)
 
     const { userId } = req
     return res.json(
