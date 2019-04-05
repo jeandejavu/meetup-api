@@ -1,7 +1,7 @@
 const { Meetup, MeetupsSubscription, Sequelize } = require('../models')
 const moment = require('moment')
-
 const Op = Sequelize.Op
+
 class UnregisteredController {
   async index (req, res) {
     const dateTime = moment()
