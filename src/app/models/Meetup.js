@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
   Meetup.prototype.toJSON = function () {
     var values = Object.assign({}, this.get())
 
-    values.pathCoverPhoto = `files/${values.coverPhoto}`
+    values.pathCoverPhoto = `${process.env.BASE_URL}/files/${values.coverPhoto}`
     return values
   }
   return Meetup
