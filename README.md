@@ -1,8 +1,10 @@
-"# meetup-api"
+# meetup-api
 
 ## INSTALL
 
-### `yarn install`
+Renomei o .env.example e preencha as variaveis
+
+### yarn install
 
 ### npx sequelize db:migrate
 
@@ -12,4 +14,4 @@
 
 In the project directory, you can run:
 
-### `yarn start`
+### yarn start`
