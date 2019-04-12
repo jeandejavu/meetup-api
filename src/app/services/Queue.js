@@ -5,7 +5,7 @@ const jobs = require('../jobs')
 
 const Queue = kue.createQueue({ redis: redisConfig })
 
-Queue.process(jobs.PurchaseMail.key, jobs.PurchaseMail.handle)
+Queue.process(jobs.MeetupSubscribeMail.key, jobs.MeetupSubscribeMail.handle)
 
 Queue.on('error', Sentry.captureException)
 

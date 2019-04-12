@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     location: DataTypes.STRING,
     coverPhoto: DataTypes.STRING,
-    eventDate: DataTypes.DATE
+    eventDate: DataTypes.DATE,
+    pathCoverPhoto: DataTypes.VIRTUAL
   })
 
   Meetup.associate = models => {
@@ -17,8 +18,14 @@ module.exports = (sequelize, DataTypes) => {
       through: models.MeetupsSubscription,
       foreignKey: 'meetupId'
     })
+    Meetup.hasMany(models.MeetupsPreference)
     Meetup.hasMany(models.MeetupsSubscription)
   }
+  Meetup.prototype.toJSON = function () {
+    var values = Object.assign({}, this.get())
 
+    values.pathCoverPhoto = `files/${values.coverPhoto}`
+    return values
+  }
   return Meetup
 }

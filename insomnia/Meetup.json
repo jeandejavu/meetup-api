@@ -1,0 +1,406 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2019-04-03T20:28:14.467Z",
+	"__export_source": "insomnia.desktop.app:v6.3.2",
+	"resources": [
+		{
+			"_id": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
+			"created": 1554236218106,
+			"description": "",
+			"modified": 1554236218106,
+			"name": "Meetup",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_802babc620374de0aef66fa86c90dd9e",
+			"color": null,
+			"created": 1554236218162,
+			"data": {
+				"base_url": "127.0.0.1:3000",
+				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTU0MzIzMjIzLCJleHAiOjE1NTQ0MDk2MjN9.5BA1b98jOcQshcsesvVepwuBo0QvxKVze72P5oDQB0U"
+			},
+			"isPrivate": false,
+			"metaSortKey": 1554236218162,
+			"modified": 1554323235802,
+			"name": "New Environment",
+			"parentId": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_9d5e6ebc7cf54eee89c47a6f7c0c2e89",
+			"cookies": [],
+			"created": 1554236218169,
+			"modified": 1554236218169,
+			"name": "Default Jar",
+			"parentId": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_1de6a7edb6244ddfa7d27b25c80e96c8",
+			"created": 1554236265671,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1554236265671,
+			"modified": 1554236265671,
+			"name": "Users",
+			"parentId": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_457803fb326e41278ea577aa8cf07c6d",
+			"created": 1554236549351,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1554236549351,
+			"modified": 1554236631574,
+			"name": "Sessions",
+			"parentId": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_aa549798b3594c4195d0b85cfbd67f64",
+			"created": 1554237362119,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1554237362119,
+			"modified": 1554237378215,
+			"name": "Meetups",
+			"parentId": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_d907bb0b60d44a8c86cbf185cf93dd8b",
+			"created": 1554237523919,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1554237523919,
+			"modified": 1554237523919,
+			"name": "Preferences",
+			"parentId": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_478c558f2ff54465a5878062ad85ae32",
+			"created": 1554318948987,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1554318948987,
+			"modified": 1554320454508,
+			"name": "Unregistereds",
+			"parentId": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_38744787d42a4ca2bfac11a3799c1134",
+			"created": 1554320441814,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1554320441814,
+			"modified": 1554320667341,
+			"name": "Subscribes",
+			"parentId": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_49a1e0fc76964642aa68586ba22bacc8",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"email\":\"brunog.silva@itgreen.com.br\",\n\t\"name\":\"Bruno Galano\",\n\t\"password\":\"123456\"\n}"
+			},
+			"created": 1554236269936,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_bb8b2e0dc7d74d1fa7301c14f8a04230",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1554236269936,
+			"method": "POST",
+			"modified": 1554313376438,
+			"name": "Create",
+			"parameters": [],
+			"parentId": "fld_1de6a7edb6244ddfa7d27b25c80e96c8",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/users",
+			"_type": "request"
+		},
+		{
+			"_id": "req_2e181f289e424d99822598d280b0c653",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n  \"id\": 1,\n  \"name\": \"Jean Melo\",\n  \"email\": \"jeanr.dejavu@gmail.com\"\n}"
+			},
+			"created": 1554313295860,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_80a6b0a0d0c145f59d153d65b58ea770",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1554236269886,
+			"method": "PUT",
+			"modified": 1554315057364,
+			"name": "Update",
+			"parameters": [],
+			"parentId": "fld_1de6a7edb6244ddfa7d27b25c80e96c8",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/users",
+			"_type": "request"
+		},
+		{
+			"_id": "req_1d506a4c5ba646798729aa603068a246",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1554313615054,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1554236269986,
+			"method": "GET",
+			"modified": 1554314768594,
+			"name": "Show",
+			"parameters": [],
+			"parentId": "fld_1de6a7edb6244ddfa7d27b25c80e96c8",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/users/1",
+			"_type": "request"
+		},
+		{
+			"_id": "req_4ef4532766b445d380eff21f4e9cc4c2",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"email\": \"jeanr.dejavu@gmail.com\",\n\t\"password\": \"123456\"\n}"
+			},
+			"created": 1554236557525,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_506ec37c62a64315926d9bb94d6e6ad2",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1554236557525,
+			"method": "POST",
+			"modified": 1554236622750,
+			"name": "Create",
+			"parameters": [],
+			"parentId": "fld_457803fb326e41278ea577aa8cf07c6d",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/sessions",
+			"_type": "request"
+		},
+		{
+			"_id": "req_6ed82949236549bab36d3282b48d1663",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1554237372340,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1554237372340,
+			"method": "GET",
+			"modified": 1554311423098,
+			"name": "Index",
+			"parameters": [],
+			"parentId": "fld_aa549798b3594c4195d0b85cfbd67f64",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/meetups",
+			"_type": "request"
+		},
+		{
+			"_id": "req_ecdced3f89674d7c855f5b53cd01cf7c",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"title\": \"Meetup 3\",\n\t\"description\": \"teste descricao\",\n\t\"location\": \"Av Santa Ines 224, Mandaqui - SP\",\n\t\"coverPhoto\": \"dsadasdsadada\",\n\t\"eventDate\": \"2019-05-01T15:00:00.000Z\",\n\t\"meetupsPreferences\": [\n\t\t{\n\t\t\t\"id\": 1,\n\t\t\t\"description\": \"Front-end\",\n\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 5,\n\t\t\t\"description\": \"Gestão\",\n\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 6,\n\t\t\t\"description\": \"Marketing\",\n\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\"\n\t\t}\n\t]\n}"
+			},
+			"created": 1554237413398,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_80a6b0a0d0c145f59d153d65b58ea770",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1554237413398,
+			"method": "POST",
+			"modified": 1554319954428,
+			"name": "Create",
+			"parameters": [],
+			"parentId": "fld_aa549798b3594c4195d0b85cfbd67f64",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/meetups",
+			"_type": "request"
+		},
+		{
+			"_id": "req_2adb1974e46f4b289ef0ff37548dd728",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1554238087554,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1554238087554,
+			"method": "GET",
+			"modified": 1554320592717,
+			"name": "Show",
+			"parameters": [],
+			"parentId": "fld_aa549798b3594c4195d0b85cfbd67f64",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/meetups/32",
+			"_type": "request"
+		},
+		{
+			"_id": "req_63b0715d260b4e3782fd6cd6ca69f463",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1554237527272,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1554237527272,
+			"method": "GET",
+			"modified": 1554300907968,
+			"name": "Index",
+			"parameters": [],
+			"parentId": "fld_d907bb0b60d44a8c86cbf185cf93dd8b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/preferences",
+			"_type": "request"
+		},
+		{
+			"_id": "req_faa5d13b1d604f95958d6ee89433ccd9",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1554318971186,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1554237470335,
+			"method": "GET",
+			"modified": 1554319142926,
+			"name": "Index",
+			"parameters": [],
+			"parentId": "fld_478c558f2ff54465a5878062ad85ae32",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/unregistereds-meetups",
+			"_type": "request"
+		},
+		{
+			"_id": "req_aa3b1ef7807e4229aeeadc6f4524e2fe",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"meetups\": [\n\t\t{\n\t\t\t\"id\": 2,\n\t\t\t\"title\": \"Meetup 5\",\n\t\t\t\"description\": \"teste descricao\",\n\t\t\t\"location\": \"Av Santa Ines 224, Mandaqui - SP\",\n\t\t\t\"coverPhoto\": \"dsadasdsadada\",\n\t\t\t\"eventDate\": \"2019-05-01T15:00:00.000Z\",\n\t\t\t\"createdAt\": \"2019-04-03T16:48:46.047Z\",\n\t\t\t\"updatedAt\": \"2019-04-03T16:48:46.047Z\",\n\t\t\t\"userId\": 1,\n\t\t\t\"User\": {\n\t\t\t\t\"id\": 1,\n\t\t\t\t\"name\": \"Jean Melo\",\n\t\t\t\t\"email\": \"jeanr.dejavu@gmail.com\",\n\t\t\t\t\"passwordHash\": \"$2a$08$95C53jWjvAObTAZ2f3WwGeDHOKq9TQV.SZmbg/sTDFCJRTO9ITfsy\",\n\t\t\t\t\"createdAt\": \"2019-04-02T20:22:18.725Z\",\n\t\t\t\t\"updatedAt\": \"2019-04-03T18:11:40.034Z\"\n\t\t\t},\n\t\t\t\"Preferences\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": 1,\n\t\t\t\t\t\"description\": \"Front-end\",\n\t\t\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"MeetupsPreference\": {\n\t\t\t\t\t\t\"createdAt\": \"2019-04-03T16:48:46.247Z\",\n\t\t\t\t\t\t\"updatedAt\": \"2019-04-03T16:48:46.247Z\",\n\t\t\t\t\t\t\"meetupId\": 2,\n\t\t\t\t\t\t\"preferenceId\": 1\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 5,\n\t\t\t\t\t\"description\": \"Gestão\",\n\t\t\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"MeetupsPreference\": {\n\t\t\t\t\t\t\"createdAt\": \"2019-04-03T16:48:46.247Z\",\n\t\t\t\t\t\t\"updatedAt\": \"2019-04-03T16:48:46.247Z\",\n\t\t\t\t\t\t\"meetupId\": 2,\n\t\t\t\t\t\t\"preferenceId\": 5\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 6,\n\t\t\t\t\t\"description\": \"Marketing\",\n\t\t\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"MeetupsPreference\": {\n\t\t\t\t\t\t\"createdAt\": \"2019-04-03T16:48:46.247Z\",\n\t\t\t\t\t\t\"updatedAt\": \"2019-04-03T16:48:46.247Z\",\n\t\t\t\t\t\t\"meetupId\": 2,\n\t\t\t\t\t\t\"preferenceId\": 6\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t},\n\t\t{\n\t\t\t\"id\": 3,\n\t\t\t\"title\": \"Meetup 4\",\n\t\t\t\"description\": \"teste descricao\",\n\t\t\t\"location\": \"Av Santa Ines 224, Mandaqui - SP\",\n\t\t\t\"coverPhoto\": \"dsadasdsadada\",\n\t\t\t\"eventDate\": \"2019-05-01T15:00:00.000Z\",\n\t\t\t\"createdAt\": \"2019-04-03T19:32:32.981Z\",\n\t\t\t\"updatedAt\": \"2019-04-03T19:32:32.981Z\",\n\t\t\t\"userId\": 1,\n\t\t\t\"User\": {\n\t\t\t\t\"id\": 1,\n\t\t\t\t\"name\": \"Jean Melo\",\n\t\t\t\t\"email\": \"jeanr.dejavu@gmail.com\",\n\t\t\t\t\"passwordHash\": \"$2a$08$95C53jWjvAObTAZ2f3WwGeDHOKq9TQV.SZmbg/sTDFCJRTO9ITfsy\",\n\t\t\t\t\"createdAt\": \"2019-04-02T20:22:18.725Z\",\n\t\t\t\t\"updatedAt\": \"2019-04-03T18:11:40.034Z\"\n\t\t\t},\n\t\t\t\"Preferences\": [\n\t\t\t\t{\n\t\t\t\t\t\"id\": 1,\n\t\t\t\t\t\"description\": \"Front-end\",\n\t\t\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"MeetupsPreference\": {\n\t\t\t\t\t\t\"createdAt\": \"2019-04-03T19:32:33.065Z\",\n\t\t\t\t\t\t\"updatedAt\": \"2019-04-03T19:32:33.065Z\",\n\t\t\t\t\t\t\"meetupId\": 3,\n\t\t\t\t\t\t\"preferenceId\": 1\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 5,\n\t\t\t\t\t\"description\": \"Gestão\",\n\t\t\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"MeetupsPreference\": {\n\t\t\t\t\t\t\"createdAt\": \"2019-04-03T19:32:33.065Z\",\n\t\t\t\t\t\t\"updatedAt\": \"2019-04-03T19:32:33.065Z\",\n\t\t\t\t\t\t\"meetupId\": 3,\n\t\t\t\t\t\t\"preferenceId\": 5\n\t\t\t\t\t}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"id\": 6,\n\t\t\t\t\t\"description\": \"Marketing\",\n\t\t\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\t\t\"MeetupsPreference\": {\n\t\t\t\t\t\t\"createdAt\": \"2019-04-03T19:32:33.065Z\",\n\t\t\t\t\t\t\"updatedAt\": \"2019-04-03T19:32:33.065Z\",\n\t\t\t\t\t\t\"meetupId\": 3,\n\t\t\t\t\t\t\"preferenceId\": 6\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t]\n\t\t}\n\t]\n}"
+			},
+			"created": 1554320558715,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_80a6b0a0d0c145f59d153d65b58ea770",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1554237392869,
+			"method": "POST",
+			"modified": 1554320661059,
+			"name": "Create",
+			"parameters": [],
+			"parentId": "fld_38744787d42a4ca2bfac11a3799c1134",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/subscribes",
+			"_type": "request"
+		}
+	]
+}

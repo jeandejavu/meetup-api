@@ -1,5 +1,7 @@
 const { User, Meetup, MeetupsSubscription, Sequelize } = require('../models')
 const moment = require('moment')
+const Queue = require('../services/Queue')
+const MeetupSubscribeMail = require('../jobs/MeetupSubscribeMail')
 const Op = Sequelize.Op
 
 class SubscribeController {
@@ -8,7 +10,14 @@ class SubscribeController {
     const { meetups } = req.body
     const user = await User.findByPk(userId)
 
-    const subscribes = await user.addMeetups(meetups.map(pref => pref.id))
+    const subscribes = await user.addMeetups(meetups.map(meetup => meetup.id))
+
+    meetups.forEach(meetup =>
+      Queue.create(MeetupSubscribeMail.key, {
+        user,
+        meetup
+      }).save()
+    )
 
     return res.json(subscribes)
   }
@@ -29,11 +38,15 @@ class SubscribeController {
         include: [
           {
             model: MeetupsSubscription,
-            where: { userId },
+            // where: { userId },
             required: true
           }
         ]
-      })
+      }).filter(meetup =>
+        meetup.MeetupsSubscriptions.find(
+          subscribe => subscribe.userId === userId
+        )
+      )
     )
   }
 }

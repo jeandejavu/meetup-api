@@ -9,6 +9,9 @@ const authMiddleware = require('./app/middlewares/auth')
 const controllers = require('./app/controllers')
 const validators = require('./app/validators')
 
+const multer = require('multer')
+const multerConfig = require('./config/multer')
+
 routes.post(
   '/users',
   validate(validators.User),
@@ -42,11 +45,23 @@ routes.post('/meetups', handle(controllers.MeetupController.store))
 routes.get('/meetups', handle(controllers.MeetupController.index))
 routes.get('/meetups/:id', handle(controllers.MeetupController.show))
 
+routes.post(
+  '/meetups-upload',
+  multer(multerConfig).single('file'),
+  handle(controllers.MeetupUploadController.store)
+)
+
 routes.get(
   '/unregistereds-meetups',
   handle(controllers.UnregisteredController.index)
 )
 
 routes.post('/subscribes', handle(controllers.SubscribeController.store))
+routes.get('/subscribes', handle(controllers.SubscribeController.index))
+
+routes.get(
+  '/unregistereds-meetups-preference',
+  handle(controllers.UnregisteredPreferenceController.index)
+)
 
 module.exports = routes

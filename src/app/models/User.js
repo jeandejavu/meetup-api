@@ -14,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       hooks: {
         beforeSave: async user => {
+          console.log(user)
           if (user.password) {
             user.passwordHash = await bcrypt.hash(user.password, 8)
           }
@@ -21,6 +22,12 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   )
+  User.prototype.toJSON = function () {
+    var values = Object.assign({}, this.get())
+
+    delete values.passwordHash
+    return values
+  }
 
   User.prototype.checkPassword = function (password) {
     return bcrypt.compare(password, this.passwordHash)

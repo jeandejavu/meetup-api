@@ -1,13 +1,28 @@
-const { Meetup, Preference, User } = require('../models')
+const {
+  Meetup,
+  Preference,
+  User,
+  MeetupsPreference,
+  MeetupsSubscription
+} = require('../models')
+const Mail = require('../services/Mail')
 
 class MeetupController {
   async store (req, res) {
     // const { title, description, location } = req.body
-    const meetup = await Meetup.create({ ...req.body, userId: req.userId })
+    const meetup = await Meetup.create({
+      ...req.body,
+      coverPhoto: '',
+      userId: req.userId
+    })
 
-    await meetup.addPreferences(
-      req.body.meetupsPreferences.map(pref => pref.id)
-    )
+    await MeetupsPreference.destroy({
+      where: {
+        meetupId: meetup.id
+      }
+    })
+
+    await meetup.addPreferences(req.body.Preferences.map(pref => pref.id))
 
     return res.json(meetup)
   }
@@ -25,11 +40,16 @@ class MeetupController {
 
   async show (req, res) {
     const { id } = req.params
+
     return res.json(
       await Meetup.findByPk(id, {
         include: [
-          { model: User, required: true },
-          { model: Preference, required: false }
+          { model: User, required: false },
+          { model: Preference, required: false },
+          {
+            model: MeetupsSubscription,
+            required: false
+          }
         ]
       })
     )

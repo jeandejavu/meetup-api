@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer')
 const path = require('path')
 const hbs = require('nodemailer-express-handlebars')
-const exphbs = require('express-handlebars')
+// const exphbs = require('express-handlebars')
 const mailConfig = require('../../config/mail')
 
 const transport = nodemailer.createTransport(mailConfig)
@@ -9,7 +9,12 @@ const transport = nodemailer.createTransport(mailConfig)
 transport.use(
   'compile',
   hbs({
-    viewEngine: exphbs(),
+    viewEngine: {
+      extName: '.hbs',
+      partialsDir: path.resolve(__dirname, '..', 'views', 'emails'),
+      layoutsDir: path.resolve(__dirname, '..', 'views', 'emails'),
+      defaultLayout: ''
+    },
     viewPath: path.resolve(__dirname, '..', 'views', 'emails'),
     extName: '.hbs'
   })

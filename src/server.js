@@ -5,6 +5,8 @@ const Youch = require('youch')
 // const Sentry = require('@sentry/node')
 const validate = require('express-validation')
 // const sentryConfig = require('./config/sentry')
+const cors = require('./app/middlewares/cors')
+const path = require('path')
 
 class App {
   constructor () {
@@ -25,7 +27,12 @@ class App {
   database () {}
 
   middlewares () {
+    this.express.use(
+      '/files',
+      express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
+    )
     this.express.use(express.json())
+    this.express.use(cors)
     // this.express.use(Sentry.Handlers.requestHandler())
   }
 

@@ -1,4 +1,4 @@
-const { User, Sequelize } = require('../models')
+const { User, Sequelize, UsersPreference, Preference } = require('../models')
 const Op = Sequelize.Op
 
 class UserController {
@@ -26,7 +26,7 @@ class UserController {
   }
 
   async update (req, res) {
-    const { email } = req.body
+    const { email, Preferences } = req.body
     const { userId } = req
 
     if (
@@ -53,21 +53,35 @@ class UserController {
       })
     }
 
-    const affected = await User.update(req.body, {
+    const insertsPreferences = Preferences.map(preference => ({
+      userId: userId,
+      preferenceId: preference.id
+    }))
+
+    await UsersPreference.destroy({
       where: {
-        id: userId
+        userId: userId
       }
     })
 
-    if (affected.length > 0) {
-      return res.json({ error: false })
-    }
-    return res.status(400).json({ error: true })
+    await UsersPreference.bulkCreate(insertsPreferences)
+
+    let user = await User.findByPk(userId)
+    await user.update(req.body)
+
+    return res.json({ error: false })
   }
 
   async show (req, res) {
-    const user = await User.findByPk(req.params.id)
-
+    const { userId } = req
+    const user = await User.findByPk(userId, {
+      include: [
+        {
+          model: Preference,
+          required: false
+        }
+      ]
+    })
     return res.json(user)
   }
 }
