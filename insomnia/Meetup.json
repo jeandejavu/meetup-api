@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2019-04-03T20:28:14.467Z",
+	"__export_date": "2019-04-12T15:05:48.162Z",
 	"__export_source": "insomnia.desktop.app:v6.3.2",
 	"resources": [
 		{
@@ -18,12 +18,12 @@
 			"color": null,
 			"created": 1554236218162,
 			"data": {
-				"base_url": "127.0.0.1:3000",
-				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTU0MzIzMjIzLCJleHAiOjE1NTQ0MDk2MjN9.5BA1b98jOcQshcsesvVepwuBo0QvxKVze72P5oDQB0U"
+				"base_url": "127.0.0.1:3333",
+				"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTU1MDE4MzYzLCJleHAiOjE1NTUxMDQ3NjN9.18y8D4JUAI64YCQY_w0JEXOp24sAaIHPrmVNIITL1Bs"
 			},
 			"isPrivate": false,
 			"metaSortKey": 1554236218162,
-			"modified": 1554323235802,
+			"modified": 1555018380515,
 			"name": "New Environment",
 			"parentId": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
 			"_type": "environment"
@@ -104,6 +104,17 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "fld_9e24c088141e439fa38a5949e8769d3c",
+			"created": 1555033214569,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1554278236453,
+			"modified": 1555033220521,
+			"name": "UnregisteredsPreference",
+			"parentId": "wrk_77ee7fd31da54ff8b8afcd732e55a6e1",
+			"_type": "request_group"
+		},
+		{
 			"_id": "req_49a1e0fc76964642aa68586ba22bacc8",
 			"authentication": {},
 			"body": {
@@ -143,7 +154,7 @@
 			},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n  \"id\": 1,\n  \"name\": \"Jean Melo\",\n  \"email\": \"jeanr.dejavu@gmail.com\"\n}"
+				"text": "{\n  \"id\": 1,\n  \"name\": \"Jean Melo\",\n  \"email\": \"jeanr.dejavu@gmail.com\",\n  \"createdAt\": \"2019-04-02T00:27:40.574Z\",\n  \"updatedAt\": \"2019-04-02T00:27:40.574Z\",\n\t\"password\": \"111111\",\n  \"Preferences\": [\n    {\n      \"id\": 2,\n      \"description\": \"Front-end\",\n      \"createdAt\": \"2019-04-02T01:49:15.513Z\",\n      \"updatedAt\": \"2019-04-02T01:49:15.513Z\",\n      \"UsersPreference\": {\n        \"createdAt\": \"2019-04-02T02:38:39.880Z\",\n        \"updatedAt\": \"2019-04-02T02:38:39.880Z\",\n        \"preferenceId\": 2,\n        \"userId\": 1\n      }\n    },\n    {\n      \"id\": 3,\n      \"description\": \"Back-end\",\n      \"createdAt\": \"2019-04-02T01:49:15.513Z\",\n      \"updatedAt\": \"2019-04-02T01:49:15.513Z\",\n      \"UsersPreference\": {\n        \"createdAt\": \"2019-04-02T02:38:39.880Z\",\n        \"updatedAt\": \"2019-04-02T02:38:39.880Z\",\n        \"preferenceId\": 3,\n        \"userId\": 1\n      }\n    },\n    {\n      \"id\": 4,\n      \"description\": \"Mobile\",\n      \"createdAt\": \"2019-04-02T01:49:15.513Z\",\n      \"updatedAt\": \"2019-04-02T01:49:15.513Z\",\n      \"UsersPreference\": {\n        \"createdAt\": \"2019-04-02T02:38:39.880Z\",\n        \"updatedAt\": \"2019-04-02T02:38:39.880Z\",\n        \"preferenceId\": 4,\n        \"userId\": 1\n      }\n    }\n  ]\n}"
 			},
 			"created": 1554313295860,
 			"description": "",
@@ -157,7 +168,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1554236269886,
 			"method": "PUT",
-			"modified": 1554315057364,
+			"modified": 1554936586562,
 			"name": "Update",
 			"parameters": [],
 			"parentId": "fld_1de6a7edb6244ddfa7d27b25c80e96c8",
@@ -183,7 +194,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1554236269986,
 			"method": "GET",
-			"modified": 1554314768594,
+			"modified": 1554912154216,
 			"name": "Show",
 			"parameters": [],
 			"parentId": "fld_1de6a7edb6244ddfa7d27b25c80e96c8",
@@ -201,7 +212,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"email\": \"jeanr.dejavu@gmail.com\",\n\t\"password\": \"123456\"\n}"
+				"text": "{\n\t\"email\": \"jeanr.dejavu@gmail.com\",\n\t\"password\": \"111111\"\n}"
 			},
 			"created": 1554236557525,
 			"description": "",
@@ -215,7 +226,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1554236557525,
 			"method": "POST",
-			"modified": 1554236622750,
+			"modified": 1555018362193,
 			"name": "Create",
 			"parameters": [],
 			"parentId": "fld_457803fb326e41278ea577aa8cf07c6d",
@@ -262,7 +273,7 @@
 			},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"title\": \"Meetup 3\",\n\t\"description\": \"teste descricao\",\n\t\"location\": \"Av Santa Ines 224, Mandaqui - SP\",\n\t\"coverPhoto\": \"dsadasdsadada\",\n\t\"eventDate\": \"2019-05-01T15:00:00.000Z\",\n\t\"meetupsPreferences\": [\n\t\t{\n\t\t\t\"id\": 1,\n\t\t\t\"description\": \"Front-end\",\n\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 5,\n\t\t\t\"description\": \"Gestão\",\n\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\"\n\t\t},\n\t\t{\n\t\t\t\"id\": 6,\n\t\t\t\"description\": \"Marketing\",\n\t\t\t\"createdAt\": \"2019-04-02T20:40:21.074Z\",\n\t\t\t\"updatedAt\": \"2019-04-02T20:40:21.074Z\"\n\t\t}\n\t]\n}"
+				"text": "{\n\t\"title\": \"Meetup 3\",\n\t\"description\": \"teste descricao\",\n\t\"location\": \"Av Santa Ines 224, Mandaqui - SP\",\n\t\"coverPhoto\": \"dsadasdsadada\",\n\t\"eventDate\": \"2019-05-01T15:00:00.000Z\",\n\"Preferences\": [\n    {\n      \"id\": 2,\n      \"description\": \"Front-end\",\n      \"createdAt\": \"2019-04-02T01:49:15.513Z\",\n      \"updatedAt\": \"2019-04-02T01:49:15.513Z\",\n      \"MeetupsPreference\": {\n        \"createdAt\": \"2019-04-11T00:54:17.094Z\",\n        \"updatedAt\": \"2019-04-11T00:54:17.094Z\",\n        \"meetupId\": 2,\n        \"preferenceId\": 2\n      }\n    },\n    {\n      \"id\": 5,\n      \"description\": \"DevOps\",\n      \"createdAt\": \"2019-04-02T01:49:15.513Z\",\n      \"updatedAt\": \"2019-04-02T01:49:15.513Z\",\n      \"MeetupsPreference\": {\n        \"createdAt\": \"2019-04-11T00:54:17.094Z\",\n        \"updatedAt\": \"2019-04-11T00:54:17.094Z\",\n        \"meetupId\": 2,\n        \"preferenceId\": 5\n      }\n    },\n    {\n      \"id\": 6,\n      \"description\": \"Gestão\",\n      \"createdAt\": \"2019-04-02T01:49:15.513Z\",\n      \"updatedAt\": \"2019-04-02T01:49:15.513Z\",\n      \"MeetupsPreference\": {\n        \"createdAt\": \"2019-04-11T00:54:17.094Z\",\n        \"updatedAt\": \"2019-04-11T00:54:17.094Z\",\n        \"meetupId\": 2,\n        \"preferenceId\": 6\n      }\n    }\n  ]\n}"
 			},
 			"created": 1554237413398,
 			"description": "",
@@ -276,7 +287,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1554237413398,
 			"method": "POST",
-			"modified": 1554319954428,
+			"modified": 1554944162929,
 			"name": "Create",
 			"parameters": [],
 			"parentId": "fld_aa549798b3594c4195d0b85cfbd67f64",
@@ -302,7 +313,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1554238087554,
 			"method": "GET",
-			"modified": 1554320592717,
+			"modified": 1555018849866,
 			"name": "Show",
 			"parameters": [],
 			"parentId": "fld_aa549798b3594c4195d0b85cfbd67f64",
@@ -312,7 +323,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}/meetups/32",
+			"url": "{{ base_url  }}/meetups/9",
 			"_type": "request"
 		},
 		{
@@ -328,7 +339,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1554237527272,
 			"method": "GET",
-			"modified": 1554300907968,
+			"modified": 1554862058934,
 			"name": "Index",
 			"parameters": [],
 			"parentId": "fld_d907bb0b60d44a8c86cbf185cf93dd8b",
@@ -400,6 +411,58 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "{{ base_url  }}/subscribes",
+			"_type": "request"
+		},
+		{
+			"_id": "req_d45ff6fe06c24499802bf0787ec7d61d",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1555030792672,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1554237392919,
+			"method": "GET",
+			"modified": 1555030816764,
+			"name": "Index",
+			"parameters": [],
+			"parentId": "fld_38744787d42a4ca2bfac11a3799c1134",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/subscribes",
+			"_type": "request"
+		},
+		{
+			"_id": "req_574af8643efc4e4cbeda25f08ece5682",
+			"authentication": {
+				"token": "{{ token  }}",
+				"type": "bearer"
+			},
+			"body": {},
+			"created": 1555033224526,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1554237441866.5,
+			"method": "GET",
+			"modified": 1555033240707,
+			"name": "Index",
+			"parameters": [],
+			"parentId": "fld_9e24c088141e439fa38a5949e8769d3c",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ base_url  }}/unregistereds-meetups-preference",
 			"_type": "request"
 		}
 	]
