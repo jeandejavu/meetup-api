@@ -5,11 +5,9 @@ const {
   MeetupsPreference,
   MeetupsSubscription
 } = require('../models')
-const Mail = require('../services/Mail')
 
 class MeetupController {
   async store (req, res) {
-    // const { title, description, location } = req.body
     const meetup = await Meetup.create({
       ...req.body,
       coverPhoto: '',
